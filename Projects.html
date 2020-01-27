@@ -1,0 +1,247 @@
+﻿<!DOCTYPE html>
+
+<style>
+    section {
+        display: flex;
+        align-content: center;
+    }
+
+    .sectionHeader {
+        text-align: center;
+        padding: 10px 50px;
+        border: 2px grey solid;
+        border-radius: 10px;
+    }
+
+    .rowContainer {
+        display: flex;
+        justify-content: space-between;
+        flex-flow: row wrap;
+        overflow: hidden;
+        max-height: 400px;
+        transition: max-height 2s ease-out;
+    }
+
+    .image, .video {
+        width: 250px;
+        height: 250px;
+        background-color: white;
+        border-radius: 5px;
+        margin: 50px 40px;
+    }
+
+    .button {
+        font-family: 'Montserrat';
+        text-align: center;
+        color: white;
+        font-size: 1em;
+        margin: 50px auto;
+        padding: 10px 20px;
+        width: 200px;
+        height: 45px;
+        background: #454545;
+        border-radius: 10px;
+        overflow: hidden;
+        transition: all 0.5s;
+        border: none;
+        outline: none !important;
+    }
+
+    .button:hover, .button:active 
+    {
+        text-decoration: none;
+        color: white;
+        background: grey;
+    }
+
+    .button span 
+    {
+        display: inline-block;
+        position: relative;
+        padding-right: 0;
+        transition: padding-right 0.5s;
+    }
+
+    .button span:after 
+    {
+        content: ' ';  
+        position: absolute;
+        top: 0;
+        right: -18px;
+        opacity: 0;
+        width: 10px;
+        height: 10px;
+        margin-top: -9px;
+        border: 3px solid #FFF;
+        border-top: none;
+        border-right: none;
+        transition: opacity 0.5s, top 0.5s, right 0.5s;
+        transform: rotate(-45deg);
+    }
+
+    #btnText1.less:after {
+        margin-top: -5px;
+        transform: rotate(135deg);
+    }
+
+    #btnText2.less:after {
+        margin-top: -5px;
+        transform: rotate(135deg);
+    }
+
+    .button:hover span, .button:active span 
+    {
+        padding-right: 30px;
+    }
+
+    .button:hover span:after, .button:active span:after 
+    {
+        transition: opacity 0.5s, top 0.5s, right 0.5s;
+        opacity: 1;
+        right: 0;
+        top: 50%;
+    }
+
+    .btnContainer {
+        display: flex; 
+        justify-content: center; 
+        border-top: 1px grey solid;
+        -webkit-box-shadow: inset 0px 20px 20px -20px rgba(255,255,255,0.6); 
+        box-shadow: inset 0px 20px 20px -20px rgba(255,255,255,0.6);
+    }
+
+@media (max-width: 880px) {
+    .image, .video {
+        width: 48%;
+        height: auto;
+        margin: 25px 0;
+    }
+}
+</style>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <title>Projects</title>
+</head>
+<body>
+    <script>
+        function showPhotos() {
+            if (document.querySelector("#btnText1").innerHTML == "Show More") {
+                document.querySelector("#btnText1").innerHTML = "Show Less";
+                $(".one").css("max-height", "8000px");
+                $("#btnText1").addClass("less");
+            }
+            else {
+                document.querySelector("#btnText1").innerHTML = "Show More";
+                $(".one").css("max-height", "400px");
+                $("#btnText1").removeClass("less");
+            };
+        }
+        function showVideos() {
+            if (document.querySelector("#btnText2").innerHTML == "Show More") {
+                document.querySelector("#btnText2").innerHTML = "Show Less";
+                $(".two").css("max-height", "8000px");
+                $("#btnText2").addClass("less");
+            }
+            else {
+                document.querySelector("#btnText2").innerHTML = "Show More";
+                $(".two").css("max-height", "400px");
+                $("#btnText2").removeClass("less");
+            };
+        };
+    </script>
+    <div w3-include-html="header.html"></div>
+
+    <main>
+        <h1>Projects</h1>
+        <section>
+            <h2 class="sectionHeader">Photos</h2>
+            <div class="rowContainer hideContent one">
+                <img class="image" src="images/sample.jpeg" alt="placeholder" />
+                <img class="image" src="images/sample.jpeg" alt="placeholder" />
+                <img class="image" src="images/sample.jpeg" alt="placeholder" />
+                <img class="image" src="images/sample.jpeg" alt="placeholder" />
+                <img class="image" src="images/sample.jpeg" alt="placeholder" />
+                <img class="image" src="images/sample.jpeg" alt="placeholder" />
+                <img class="image" src="images/sample.jpeg" alt="placeholder" />
+                <img class="image" src="images/sample.jpeg" alt="placeholder" />
+            </div>
+
+            <div class="btnContainer">
+                <button onclick="showPhotos()" class="button">
+                    <span id="btnText1">Show More</span>
+                </button>
+            </div>
+
+        </section>
+        <section>
+            <h2 class="sectionHeader">Videos</h2>
+            <div class="rowContainer two">
+                <img class="video" src="images/sample.jpeg" alt="placeholder" />
+                <img class="video" src="images/sample.jpeg" alt="placeholder" />
+                <img class="video" src="images/sample.jpeg" alt="placeholder" />
+                <img class="video" src="images/sample.jpeg" alt="placeholder" />
+                <img class="video" src="images/sample.jpeg" alt="placeholder" />
+                <img class="video" src="images/sample.jpeg" alt="placeholder" />
+                <img class="video" src="images/sample.jpeg" alt="placeholder" />
+                <img class="video" src="images/sample.jpeg" alt="placeholder" />
+            </div>
+            <div class="btnContainer">
+                <button onclick="showVideos()" class="button">
+                    <span id="btnText2">Show More</span>
+                </button>
+            </div>
+        </section>
+        <section>
+            <div class="carousel slide" id="myCarousel" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                    <li data-target="#myCarousel" data-slide-to="3"></li>
+                </ol>
+                <div class="carousel-inner">
+
+                    <div class="carousel-item active">
+                        <img src="images/placeholder.jpg" alt="placeholder" />
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="images/placeholder.jpg" alt="placeholder" />
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="images/placeholder.jpg" alt="placeholder" />
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="images/placeholder.jpg" alt="placeholder" />
+                    </div>
+
+                </div>
+                <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </section>
+    </main>
+    <div w3-include-html="footer.html"></div>
+    <script>
+        w3.includeHTML();
+    </script>
+</body>
+</html>

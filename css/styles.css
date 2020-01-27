@@ -1,0 +1,37 @@
+﻿
+body {
+    background-color: black !important;
+    margin: 0;
+}
+
+main {
+    margin: 100px 10%;
+}
+
+.navbar {
+    padding: 0px 10%;
+}
+
+#myCarousel, .carousel-inner {
+    width: auto;
+    height: 600px;
+    margin: 100px auto;
+    border-radius: 10px;
+}
+
+h1 {
+    font-family: 'Montserrat';
+    color: white;
+    font-size: 3em !important;
+    margin: 120px 0 60px 0 !important;
+}
+
+h2 {
+    font-family: 'Montserrat';
+    color: white;
+}
+
+p {
+    color: white;
+}
+
