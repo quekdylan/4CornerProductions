@@ -9,16 +9,20 @@ main {
 }
 
 .navbar {
-    padding: 0px 10%;
-    height: 120px;
+    padding: 0px 10% !important;
 }
 
 #myCarousel, .carousel-inner {
-    width: auto;
-    height: 600px;
+    position: relative;
+    width: 100%;
     margin: 100px auto;
     border-radius: 10px;
 }
+
+.carousel-item > img {
+    width: 100%;
+}
+
 
 h1 {
     font-family: 'Montserrat';
