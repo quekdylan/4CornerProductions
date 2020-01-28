@@ -10,6 +10,7 @@ main {
 
 .navbar {
     padding: 0px 10%;
+    height: 120px;
 }
 
 #myCarousel, .carousel-inner {
@@ -30,7 +31,9 @@ h2 {
     font-family: 'Montserrat';
     color: white;
 }
-
+h5{
+    color: white;
+}
 p {
     color: white;
 }
